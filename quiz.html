@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trắc nghiệm</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js"></script>
+</head>
+<body class="quiz-page">
+  <div class="layout">
+    <div class="backdrop" id="backdrop"></div>
+
+    <!-- Thanh bên: lưới số câu -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sb-head">
+        <h2 id="sbTitle">Câu hỏi</h2>
+        <button class="sb-close" id="sbClose" aria-label="Đóng danh sách câu">✕</button>
+      </div>
+      <div class="sb-grid" id="grid"></div>
+      <div class="sb-foot">
+        <button class="btn primary block" id="retryBtn" hidden>Làm lại câu sai</button>
+        <button class="btn block reset" id="resetBtn">
+          <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+          Làm lại
+        </button>
+        <a class="btn block ghost" href="index.html">← Danh sách chương</a>
+      </div>
+    </aside>
+
+    <div class="main-col">
+      <header class="topbar">
+        <div class="tb-left">
+          <button class="icon-btn menu" id="menuBtn" aria-label="Mở danh sách câu">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <h1 class="page-name" id="pageTitle">Trắc nghiệm</h1>
+        </div>
+        <div class="tb-right">
+          <button class="icon-btn" id="themeToggle" type="button" aria-label="Đổi giao diện"></button>
+          <div class="score-pill" title="Số câu đúng / sai">
+            <span class="t-ok"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> <b id="scoreOk">0</b></span>
+            <span class="t-bad"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> <b id="scoreBad">0</b></span>
+          </div>
+        </div>
+      </header>
+      <div class="progress" title="Số câu đã làm"><div class="bar" id="progressBar"></div><span id="progressText"></span></div>
+
+      <main class="content" id="content">
+        <div class="container" id="app"><p class="muted">Đang tải…</p></div>
+      </main>
+    </div>
+  </div>
+
+  <div id="modal"></div>
+  <div class="toast" id="toast" hidden></div>
+
+  <!-- Dữ liệu từng chương -->
+  <script src="data/chuong1.js"></script>
+  <script src="data/chuong2.js"></script>
+  <script src="data/chuong3.js"></script>
+  <script src="data/chuong4.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>

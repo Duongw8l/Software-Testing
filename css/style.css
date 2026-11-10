@@ -71,7 +71,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
 }
-body, .card, .sidebar, .topbar, .option, .btn { transition: background-color .2s, border-color .2s, color .2s; }
+body, .card, .sidebar, .topbar, .btn { transition: background-color .2s, border-color .2s, color .2s; }
 a { color: var(--primary); }
 .icon { flex: none; display: block; }
 .muted { color: var(--muted); margin: .25rem 0 0; }
@@ -235,14 +235,21 @@ a.chapter:hover { border-color: var(--primary); background: var(--primary-soft);
   padding: 14px 16px; text-align: left; font: inherit; line-height: 1.45;
   border: 2px solid var(--border); border-radius: 8px;
   background: var(--surface); color: var(--text); cursor: pointer;
+  box-shadow: 0 0 0 1px transparent;
+  transition: background-color .15s, border-color .15s, color .15s, box-shadow .15s;
 }
-.option:hover:not(:disabled) { background: var(--bg); border-color: #93c5fd; }
-.option:hover:not(:disabled) .box:not(.filled) { border-color: var(--muted); }
+/* Hiệu ứng rê chuột chỉ cho ô CHƯA chọn và chỉ trên thiết bị có chuột
+   (trên điện thoại :hover bị "dính" sau khi chạm, gây chớp màu) */
+@media (hover: hover) {
+  .option:hover:not(:disabled):not(.selected) { background: var(--bg); border-color: #93c5fd; }
+  .option:hover:not(:disabled) .box:not(.filled) { border-color: var(--muted); }
+}
 .option:disabled { cursor: default; }
 .option .opt-text { flex: 1; }
-.option.selected { border-color: var(--primary); background: var(--primary-soft); color: var(--primary-ink); font-weight: 500; box-shadow: 0 0 0 1px var(--primary); }
-.option.correct { border-color: var(--ok); background: var(--ok-soft); color: var(--ok-ink); font-weight: 500; box-shadow: 0 0 0 1px var(--ok); }
-.option.wrong { border-color: var(--bad); background: var(--bad-soft); color: var(--bad-ink); font-weight: 500; box-shadow: 0 0 0 1px var(--bad); }
+/* Không đổi font-weight khi chọn: chữ đậm hơn sẽ rộng hơn, làm chữ xô lệch / xuống dòng -> ô bị "giật" */
+.option.selected { border-color: var(--primary); background: var(--primary-soft); color: var(--primary-ink); box-shadow: 0 0 0 1px var(--primary); }
+.option.correct { border-color: var(--ok); background: var(--ok-soft); color: var(--ok-ink); box-shadow: 0 0 0 1px var(--ok); }
+.option.wrong { border-color: var(--bad); background: var(--bad-soft); color: var(--bad-ink); box-shadow: 0 0 0 1px var(--bad); }
 .option.faded { opacity: .5; color: var(--muted); }
 .option .mark { margin-left: auto; }
 .option .mark.ok { color: var(--ok); }
@@ -253,6 +260,7 @@ a.chapter:hover { border-color: var(--primary); background: var(--primary-soft);
   flex: none; width: 20px; height: 20px; margin-top: 1px;
   border: 2px solid var(--border-2); display: grid; place-items: center; color: #fff;
 }
+.box { transition: background-color .15s, border-color .15s; }
 .box.round { border-radius: 50%; }
 .box.square { border-radius: 4px; }
 .option.selected .box.filled { background: var(--primary); border-color: var(--primary); }

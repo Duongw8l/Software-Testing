@@ -40,7 +40,7 @@
         : "";
 
       return '<a class="card chapter" href="quiz.html?chapter=' + n + '">' +
-        '<div class="chapter-num">' + n + "</div>" +
+        '<div class="chapter-num">' + (res.data.num || n) + "</div>" +
         '<div class="chapter-body"><h2>' + A.escapeHtml(title) + "</h2>" +
         '<div class="chips">' + meta + "</div>" + progress + "</div>" +
         '<span class="chev">' + A.icon("right", 22) + "</span></a>";

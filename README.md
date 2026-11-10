@@ -1,11 +1,11 @@
 # Trắc nghiệm Kiểm thử phần mềm
 
-Ứng dụng ôn tập trắc nghiệm môn Kiểm thử phần mềm (4 chương, 80 câu), viết bằng HTML/CSS/JavaScript thuần — không cần cài đặt, không cần server.
+Ứng dụng ôn tập trắc nghiệm môn Kiểm thử phần mềm (4 chương, 2 bộ đề, 184 câu), viết bằng HTML/CSS/JavaScript thuần — không cần cài đặt, không cần server.
 
 **Dùng online:** https://duongw8l.github.io/Software-Testing/
 
 ## Tính năng
-- 4 chương: Cơ bản về kiểm thử · Kiểm thử trong vòng đời phát triển · Kiểm thử tĩnh · Kỹ thuật kiểm thử
+- 4 chương: Cơ bản về kiểm thử · Kiểm thử trong vòng đời phát triển · Kiểm thử tĩnh · Kỹ thuật kiểm thử — mỗi chương có Bộ 1 và Bộ 2
 - Lưới số câu (xanh = đúng, đỏ = sai), chuyển câu tự do, nút Trước / Kiểm Tra / Tiếp
 - Câu một đáp án và nhiều đáp án, hiện đáp án đúng và giải thích
 - Bảng kết quả, làm lại toàn bộ hoặc chỉ làm lại câu sai, lưu điểm cao nhất
@@ -16,7 +16,7 @@
 Mở `index.html` bằng trình duyệt.
 
 ## Sửa câu hỏi
-Dữ liệu nằm trong `data/chuong1.js` … `data/chuong4.js`. Mỗi câu có dạng:
+Dữ liệu nằm trong `data/chuong1.js` … `data/chuong8.js` (`chuong5`–`chuong8` là Bộ 2 của chương 1–4). Mỗi câu có dạng:
 
 ```js
 {
@@ -33,7 +33,7 @@ Dữ liệu nằm trong `data/chuong1.js` … `data/chuong4.js`. Mỗi câu có 
 ## Cấu trúc
 ```
 index.html      trang chủ (danh sách chương)
-quiz.html       trang làm bài (?chapter=1..4)
+quiz.html       trang làm bài (?chapter=1..8; 5–8 là Bộ 2 của chương 1–4)
 css/style.css   giao diện
 js/app.js       logic chung (lưu trữ, chấm điểm, xáo trộn, giao diện sáng/tối)
 js/home.js      trang chủ

@@ -13,6 +13,7 @@
   var questions = [];   // câu hỏi gốc trong file dữ liệu
   var P = null;         // tiến độ hiện tại (xem newProgress)
   var draft = [];       // đáp án đang chọn (chỉ số GỐC) ở câu hiện tại, chưa bấm Kiểm tra
+  var shownQi = null;   // câu đang hiển thị, để biết khi nào cần chạy hiệu ứng chuyển câu
 
   function $(id) { return document.getElementById(id); }
 
@@ -178,8 +179,12 @@
       ? '<div class="explain">💡 ' + A.escapeHtml(q.explanation) + "</div>" : "";
 
     var nav = navTargets();
+    // Chỉ chạy hiệu ứng hiện dần khi CHUYỂN sang câu khác.
+    // (Trước đây hiệu ứng chạy lại sau mỗi lần chọn / kiểm tra → khung câu hỏi bị "giật".)
+    var animate = shownQi !== qi;
+    shownQi = qi;
     $("app").innerHTML =
-      '<div class="card qcard fade-in">' +
+      '<div class="card qcard' + (animate ? " fade-in" : "") + '">' +
       '<div class="q-head"><span class="badge">Câu ' + (P.pos + 1) + "/" + total() +
       (multi ? '<span class="badge-note">(Chọn nhiều đáp án)</span>' : "") + "</span>" +
       (P.retry ? '<span class="badge retry">Làm lại câu sai</span>' : "") +
@@ -252,7 +257,22 @@
     } else {
       draft = [orig];
     }
-    renderQuestion();
+    updateSelection();
+  }
+
+  // Cập nhật trạng thái chọn ngay trên các nút có sẵn, không vẽ lại cả khung câu hỏi
+  function updateSelection() {
+    var multi = A.isMulti(qAt(P.pos));
+    document.querySelectorAll("#options .option").forEach(function (el) {
+      var on = draft.indexOf(+el.getAttribute("data-orig")) !== -1;
+      el.classList.toggle("selected", on);
+      var box = el.querySelector(".box");
+      box.classList.toggle("filled", on);
+      if (multi) {
+        box.innerHTML = on ? '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>' : "";
+      }
+    });
+    if ($("checkBtn")) $("checkBtn").disabled = draft.length === 0;
   }
 
   function check() {

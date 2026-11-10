@@ -111,10 +111,10 @@ window.CHAPTER_DATA[1] = {
         "1) trường hợp kiểm thử, 2) kiểm tra, 3) quản lý lỗi.",
         "1) trường hợp kiểm thử, 2) xác thực, 3) theo dõi lỗi."
       ],
-      "correctAnswer": 1,
+      "correctAnswer": 3,
       "type": "single",
       "image": null,
-      "explanation": "Quy trình quản lý và theo dõi các lỗi gọi là quản lý lỗi (defect management). Lưu ý: file Word vừa in đậm b vừa ghi \"(Đáp án đúng)\" ở d; đang chọn b."
+      "explanation": ""
     },
     {
       "id": 9,

@@ -1,4 +1,4 @@
-// Dữ liệu Chương 1 (Bộ 3) — chuyển từ Tài-liệu-không-có-tiêu-đề-3.docx
+// Dữ liệu Chương 1 (Bộ 3) — chuyển từ Kiểm-thử-ôn-tập-chương-1.docx
 // Sửa câu hỏi trực tiếp tại đây. correctAnswer là chỉ số bắt đầu từ 0 (a=0, b=1, c=2, d=3); câu nhiều đáp án dùng mảng.
 window.CHAPTER_DATA = window.CHAPTER_DATA || {};
 window.CHAPTER_DATA[9] = {
@@ -811,6 +811,293 @@ window.CHAPTER_DATA[9] = {
       "type": "single",
       "image": "images/ch1_bo3_error_fault_failure.jpg",
       "explanation": "Sơ đồ hiển thị rõ mũi tên Static testing chỉ trực tiếp vào tầng Fault or bug (phát hiện khiếm khuyết trong tài liệu/mã mà không cần chạy), trong khi Dynamic testing chỉ vào tầng Failure (khi hệ thống thực thi)."
+    },
+    {
+      "id": 54,
+      "question": "Một lập trình viên hiểu sai yêu cầu nghiệp vụ về tính thuế VAT và viết nhầm công thức `tax = price * 0.05` thay vì `0.1`. Khi khách hàng thực hiện thanh toán trực tuyến, hệ thống trừ ít tiền hơn quy định. Trong kịch bản này, đâu là mô tả chính xác nhất về \"Fault\" (sai sót / defect)?",
+      "options": [
+        "Công thức `tax = price * 0.05` được lưu trong mã nguồn của hệ thống.",
+        "Sự kiện hệ thống trừ thiếu tiền thanh toán của khách hàng khi vận hành thực tế.",
+        "Hành động hiểu sai quy định tính thuế của lập trình viên.",
+        "Tài liệu yêu cầu nghiệp vụ do bộ phận kinh doanh cung cấp."
+      ],
+      "correctAnswer": 0,
+      "type": "single",
+      "image": null,
+      "explanation": "Fault (khiếm khuyết/defect) là biểu hiện cụ thể của một lỗi con người (error) tồn tại bên trong phần mềm hoặc tài liệu."
+    },
+    {
+      "id": 55,
+      "question": "Một đội ngũ nhận được báo cáo từ người dùng rằng ứng dụng bị văng (crash) khi tải lên tệp tin dung lượng lớn. Thành viên A thực hiện chạy lại ứng dụng với các tệp tin khác nhau để ghi lại chính xác điều kiện xảy ra sự cố. Thành viên B sử dụng công cụ tra cứu vị trí biến tràn bộ nhớ và sửa mã nguồn. Phát biểu nào sau đây phản ánh đúng bản chất công việc của hai thành viên?",
+      "options": [
+        "Thành viên A thực hiện gỡ lỗi (Debugging), trong khi Thành viên B thực hiện kiểm thử xác nhận (Confirmation testing).",
+        "Thành viên A thực hiện kiểm thử (Testing) để xác định sự tồn tại của khiếm khuyết, còn Thành viên B thực hiện gỡ lỗi (Debugging) để định vị và loại bỏ nguyên nhân.",
+        "Thành viên A thực hiện kiểm thử tĩnh (Static testing), còn Thành viên B thực hiện kiểm thử động (Dynamic testing).",
+        "Cả hai thành viên đều đang thực hiện gỡ lỗi vì mục tiêu cuối cùng của họ là làm cho ứng dụng hoạt động bình thường."
+      ],
+      "correctAnswer": 1,
+      "type": "single",
+      "image": null,
+      "explanation": "Kiểm thử giúp tìm kiếm sự tồn tại của lỗi mà không bao gồm sửa chữa, trong khi gỡ lỗi là quá trình định vị, phân tích và loại bỏ nguyên nhân gốc rễ gây ra thất bại."
+    },
+    {
+      "id": 56,
+      "question": "Dựa trên khái niệm về độ tin cậy phần mềm và sai sót (faults), những nhận định nào sau đây là ĐÚNG khi phân tích chất lượng hệ thống?",
+      "options": [
+        "Một phần mềm hoàn toàn không chứa sai sót (\"fault-free\") luôn luôn đảm bảo đáp ứng được mọi kỳ vọng và sự hài lòng của người dùng.",
+        "Loại bỏ toàn bộ sai sót phát hiện được trong giai đoạn kiểm thử sẽ đảm bảo hệ thống đạt độ tin cậy tuyệt đối 100%.",
+        "Một hệ thống phần mềm vẫn có thể đạt độ tin cậy cao nếu các sai sót tiềm ẩn trong mã nguồn chưa bao giờ được kích hoạt trong điều kiện vận hành thực tế.",
+        "Độ tin cậy được đo bằng xác suất hệ thống vận hành không gặp thất bại trong một khoảng thời gian và điều kiện vận hành xác định."
+      ],
+      "correctAnswer": [
+        2,
+        3
+      ],
+      "type": "multiple",
+      "image": null,
+      "explanation": ""
+    },
+    {
+      "id": 57,
+      "question": "Dựa trên nguyên lý chi phí tìm và sửa chữa khiếm khuyết tăng theo thời gian trong vòng đời phát triển phần mềm, hậu quả kinh tế nào nghiêm trọng nhất nếu lỗi trong tài liệu Yêu cầu (Requirements) không được phát hiện cho đến giai đoạn Vận hành thực tế (Live use)?",
+      "options": [
+        "Chi phí kiểm thử tự động tăng lên vì phải viết lại toàn bộ khung kiểm thử (testing framework).",
+        "Chi phí khắc phục tăng vọt do phải sửa đổi lại từ khâu yêu cầu, thiết kế, lập trình, kiểm thử lại đến bồi thường thiệt hại vận hành.",
+        "Chi phí ở giai đoạn Vận hành thực tế luôn bằng với chi phí ở giai đoạn Kiểm thử hệ thống vì cùng dùng chung một đội ngũ hỗ trợ.",
+        "Chi phí chỉ tăng nhẹ vì chỉ cần cập nhật lại tài liệu đặc tả yêu cầu cho đúng với thực tế."
+      ],
+      "correctAnswer": 1,
+      "type": "single",
+      "image": null,
+      "explanation": "Lỗi phát hiện càng muộn thì số lượng sản phẩm công việc ở các giai đoạn trước cần phải đập đi làm lại càng lớn, kéo theo chi phí tăng theo lũy thừa."
+    },
+    {
+      "id": 58,
+      "question": "Một màn hình nhập liệu có 5 trường thông tin độc lập. Mỗi trường tiếp nhận 10 giá trị khả thi. Màn hình này chứa 2 menu thả xuống, mỗi menu có 3 lựa chọn. Để thực hiện kiểm thử toàn diện (Exhaustive testing) bằng cách kết hợp tất cả các giá trị đầu vào và tùy chọn menu, số lượng ca kiểm thử cần thiết là bao nhiêu?",
+      "options": [
+        "5×10×2×3=300 ca kiểm thử.",
+        "(5+10)×(2+3)=75 ca kiểm thử.",
+        "10⁵ × 3² = 900,000 ca kiểm thử.",
+        "10⁵ + 3² = 100,009 ca kiểm thử."
+      ],
+      "correctAnswer": 2,
+      "type": "single",
+      "image": null,
+      "explanation": "Số lượng tổ hợp kiểm thử toàn diện bằng tích số trường hợp của từng thành phần: 10×10×10×10×10×3×3 = 10⁵ × 3² = 900,000."
+    },
+    {
+      "id": 59,
+      "question": "Sự khác biệt cốt lõi trong tiếp cận kiểm thử giữa một hệ thống điều khiển phanh tự động trên ô tô (safety-critical) và một ứng dụng đọc tin tức giải trí là gì?",
+      "options": [
+        "Hệ thống phanh đòi hỏi các tiêu chuẩn tuân thủ khắt khe, mức độ tin cậy cực cao và quy trình kiểm thử chặt chẽ hơn do rủi ro gây thiệt hại về người.",
+        "Ứng dụng tin tức chỉ sử dụng kiểm thử động, còn hệ thống phanh chỉ sử dụng kiểm thử tĩnh.",
+        "Hệ thống phanh không cần phân tích rủi ro vì mọi chức năng của nó đều quan trọng như nhau.",
+        "Ứng dụng tin tức cần kiểm thử toàn diện mọi trường hợp, còn hệ thống phanh chỉ cần kiểm thử các kịch bản cơ bản."
+      ],
+      "correctAnswer": 0,
+      "type": "single",
+      "image": null,
+      "explanation": "Kiểm thử phụ thuộc vào ngữ cảnh; các hệ thống an toàn - quan trọng phải ưu tiên mức độ bao phủ và tiêu chí hoàn tất cao hơn nhiều."
+    },
+    {
+      "id": 60,
+      "question": "Trong hệ thống tài liệu quản lý kiểm thử, sự khác biệt giữa \"Chính sách kiểm thử\" (Test Policy) và \"Kế hoạch kiểm thử dự án\" (Project Test Plan) bao gồm những đặc điểm nào?",
+      "options": [
+        "Kế hoạch kiểm thử dự án được xây dựng riêng cho từng dự án cụ thể, bao gồm ước lượng chi phí, lịch trình và phân công nhân sự.",
+        "Kế hoạch kiểm thử dự án không cần tuân thủ các nguyên tắc hoặc định hướng định ra trong Chính sách kiểm thử.",
+        "Chính sách kiểm thử quy định chi tiết các ca kiểm thử cụ thể (low-level test cases) cho từng tính năng phần mềm.",
+        "Chính sách kiểm thử là tài liệu tĩnh mức cao nhất ở cấp độ tổ chức, định nghĩa ý nghĩa và mục tiêu kiểm thử của công ty."
+      ],
+      "correctAnswer": [
+        0,
+        3
+      ],
+      "type": "multiple",
+      "image": null,
+      "explanation": ""
+    },
+    {
+      "id": 61,
+      "question": "Tester tạo mô tả kịch bản: \"Kiểm tra chức năng chuyển tiền ngân hàng với tài khoản có đủ dư có và hạn mức giao dịch hợp lệ\". Sau đó, tester bổ sung thông tin chi tiết: \"Tài khoản gửi: 102001, Tài khoản nhận: 102002, Số tiền: 5,000,000 VND, OTP: 123456\". Phân loại hai dạng ca kiểm thử này là gì?",
+      "options": [
+        "Cả hai mô tả đều thuộc dạng Test Script thực thi tự động.",
+        "Mô tả đầu tiên là Ca kiểm thử cụ thể (Concrete Test Case), còn mô tả bổ sung là Ca kiểm thử logic (Logical Test Case).",
+        "Mô tả đầu tiên là Tiêu chí hoàn tất kiểm thử, mô tả bổ sung là Báo cáo kiểm thử.",
+        "Mô tả đầu tiên là Ca kiểm thử logic (Logical / High-level Test Case), còn mô tả bổ sung là Ca kiểm thử cụ thể (Concrete / Low-level Test Case)."
+      ],
+      "correctAnswer": 3,
+      "type": "single",
+      "image": null,
+      "explanation": "Logical test case không chứa giá trị đầu vào thực tế mà chỉ chứa điều kiện logic, trong khi Concrete test case cung cấp dữ liệu thực tế cụ thể."
+    },
+    {
+      "id": 62,
+      "question": "Tiêu chuẩn \"Kinh tế\" (Cheap to use / Economic) trong việc đánh giá một ca kiểm thử tốt (Good Test Case) được hiểu chính xác như thế nào?",
+      "options": [
+        "Ca kiểm thử chỉ được chạy đúng một lần duy nhất rồi xóa bỏ để tiết kiệm không gian lưu trữ tài liệu.",
+        "Ca kiểm thử đó được viết bởi các kiểm thử viên thực tập sinh để giảm chi phí nhân công dự án.",
+        "Chi phí và nguồn lực bỏ ra để thiết kế, chuẩn bị dữ liệu, thực thi và bảo trì ca kiểm thử đó là hợp lý so với giá trị phát hiện lỗi mà nó đem lại.",
+        "Ca kiểm thử không sử dụng bất kỳ công cụ hỗ trợ thương mại nào có bản quyền."
+      ],
+      "correctAnswer": 2,
+      "type": "single",
+      "image": null,
+      "explanation": "Một test case tốt phải cân bằng giữa chi phí thực hiện/bảo trì và khả năng mang lại lợi ích phát hiện khiếm khuyết."
+    },
+    {
+      "id": 63,
+      "question": "Dự án quy định: \"Tất cả các ca kiểm thử mức độ rủi ro Cao phải được thực thi 100%, tỷ lệ ca kiểm thử đạt (pass) tối thiểu 98%, và không còn lỗi nghiêm trọng (Critical bug) nào đang mở\". Quy định này đóng vai trò gì trong kế hoạch kiểm thử?",
+      "options": [
+        "Tiêu chí hoàn tất kiểm thử (Test Exit Criteria).",
+        "Tiêu chí bắt đầu kiểm thử (Test Entry Criteria).",
+        "Quy tắc đạo đức của kiểm thử viên.",
+        "Phương pháp thiết kế ca kiểm thử tự động."
+      ],
+      "correctAnswer": 0,
+      "type": "single",
+      "image": null,
+      "explanation": "Exit criteria quy định các điều kiện đo lường phải đạt được để chính thức dừng hoạt động kiểm thử ở một mức độ cụ thể."
+    },
+    {
+      "id": 64,
+      "question": "Bên cạnh kiểm tra tính đúng đắn về chức năng (Functional testing), kiểm thử phần mềm còn đánh giá các thuộc tính phi chức năng (Non-functional attributes) nào sau đây?",
+      "options": [
+        "Hiệu năng (Performance) và Khả năng sử dụng (Usability).",
+        "Tính hợp pháp của các điều khoản hợp đồng kinh tế giữa nhà cung cấp và khách hàng.",
+        "Độ tin cậy (Reliability) và Khả năng bảo trì (Maintainability).",
+        "Khả năng bảo mật / An toàn thông tin (Security)."
+      ],
+      "correctAnswer": [
+        0,
+        2,
+        3
+      ],
+      "type": "multiple",
+      "image": null,
+      "explanation": "Tốc độ phản hồi hệ thống và mức độ dễ dùng của giao diện là các thuộc tính chất lượng phi chức năng. Độ tin cậy và khả năng bảo trì là các tiêu chuẩn chất lượng phi chức năng quan trọng của phần mềm. Bảo mật kiểm tra khả năng chống lại các truy cập trái phép, thuộc nhóm thuộc tính phi chức năng."
+    },
+    {
+      "id": 65,
+      "question": "Nhận định nào sau đây mô tả ĐÚNG mối quan hệ giữa Kiểm thử phần mềm (Testing) và Đảm bảo chất lượng (Quality Assurance - QA)?",
+      "options": [
+        "Kiểm thử là một hoạt động Kiểm soát chất lượng (Quality Control) tập trung vào sản phẩm, nằm trong khung quy trình Đảm bảo chất lượng (QA) rộng hơn.",
+        "Kiểm thử chỉ tập trung vào tài liệu quy trình, còn QA tập trung vào việc tìm bug trong mã nguồn.",
+        "Đảm bảo chất lượng là một giai đoạn chạy thử phần mềm diễn ra ngay sau khi bước kiểm thử kết thúc.",
+        "Kiểm thử và Đảm bảo chất lượng là hai thuật ngữ hoàn toàn đồng nghĩa và có thể thay thế cho nhau."
+      ],
+      "correctAnswer": 0,
+      "type": "single",
+      "image": null,
+      "explanation": "QA tập trung vào quy trình để ngăn ngừa lỗi, trong khi Kiểm thử kiểm tra sản phẩm thực tế để phát hiện khiếm khuyết."
+    },
+    {
+      "id": 66,
+      "question": "Trong quy trình kiểm thử chuẩn, giai đoạn Triển khai kiểm thử (Test Implementation) bao gồm những nhiệm vụ cụ thể nào?",
+      "options": [
+        "Xác định các điều kiện kiểm thử (test conditions) từ việc phân tích tài liệu đặc tả.",
+        "Xây dựng và kiểm tra tính sẵn sàng của môi trường kiểm thử (test environment setup).",
+        "So sánh kết quả thực tế với kết quả mong đợi và ghi nhận báo cáo lỗi (defect report).",
+        "Chuẩn bị kịch bản kiểm thử (test scripts), dữ liệu kiểm thử và sắp xếp các ca kiểm thử thành chuỗi thực thi."
+      ],
+      "correctAnswer": [
+        1,
+        3
+      ],
+      "type": "multiple",
+      "image": null,
+      "explanation": "Thiết lập và xác nhận hạ tầng/công cụ phục vụ kiểm thử là hoạt động trọng tâm của giai đoạn triển khai. Triển khai kiểm thử biến đổi các ca kiểm thử thiết kế thành kịch bản cụ thể sẵn sàng cho việc chạy thử."
+    },
+    {
+      "id": 67,
+      "question": "Sau khi Lập trình viên thông báo đã sửa xong lỗi Bug #102, Tester A thực thi lại đúng ca kiểm thử từng phát hiện Bug #102. Ngay sau đó, Tester A thực thi thêm một tập hợp các ca kiểm thử ở các mô-đun lân cận để đảm bảo việc sửa Bug #102 không làm hỏng tính năng cũ. Hai hoạt động của Tester A lần lượt là gì?",
+      "options": [
+        "Kiểm thử toàn diện (Exhaustive testing), sau đó là Kiểm thử dựa trên rủi ro (Risk-based testing).",
+        "Kiểm thử xác nhận (Confirmation testing), sau đó là Kiểm thử hồi quy (Regression testing).",
+        "Kiểm thử hồi quy (Regression testing), sau đó là Kiểm thử xác nhận (Confirmation testing).",
+        "Kiểm thử tĩnh (Static testing), sau đó là Kiểm thử động (Dynamic testing)."
+      ],
+      "correctAnswer": 1,
+      "type": "single",
+      "image": null,
+      "explanation": "Kiểm thử xác nhận chạy lại đúng test case đã trượt để xác nhận lỗi đã được sửa; kiểm thử hồi quy kiểm tra xem sự thay đổi code có gây ra lỗi ở nơi khác không."
+    },
+    {
+      "id": 68,
+      "question": "Cấp độ độc lập kiểm thử (Independence of testing) nào sau đây thường mang lại khả năng phát hiện lỗi khách quan nhất nhưng lại có nguy cơ gặp rào cản lớn về mặt giao tiếp với nhóm phát triển?",
+      "options": [
+        "Chính lập trình viên tự kiểm thử mã nguồn do mình viết ra.",
+        "Kiểm thử viên làm việc trực tiếp cùng đội ngũ phát triển trong cùng một nhóm dự án Agile.",
+        "Các lập trình viên trong cùng một nhóm thực hiện kiểm thử chéo mã nguồn của nhau.",
+        "Các kiểm thử viên độc lập thuộc một tổ chức / công ty kiểm thử thuê ngoài (Outsourced testers)."
+      ],
+      "correctAnswer": 3,
+      "type": "single",
+      "image": null,
+      "explanation": "Mức độ độc lập cao nhất (thuê ngoài) mang lại sự khách quan tối đa nhưng khoảng cách địa lý và tổ chức làm giảm hiệu quả giao tiếp."
+    },
+    {
+      "id": 69,
+      "question": "Những nội dung nào sau đây thuộc về tài liệu Chiến lược kiểm thử (Test Strategy) ở cấp độ công ty/chương trình?",
+      "options": [
+        "Xác định các mức độ kiểm thử (levels of testing) và loại kiểm thử (functional/non-functional) sẽ áp dụng.",
+        "Xác định tiêu chí bắt đầu (entry) và kết thúc (exit) cho các giai đoạn kiểm thử.",
+        "Lịch phân công công việc chi tiết theo từng ngày cho kiểm thử viên trong tuần hiện tại.",
+        "Quy định phương pháp quản lý lỗi, phân loại lỗi và cách tiếp cận tự động hóa kiểm thử."
+      ],
+      "correctAnswer": [
+        0,
+        1,
+        3
+      ],
+      "type": "multiple",
+      "image": null,
+      "explanation": "Chiến lược kiểm thử định ra phương pháp tổng thể và cấu trúc các cấp độ kiểm thử áp dụng chung. Bộ tiêu chí chuẩn hóa cho việc chuyển giao giữa các giai đoạn kiểm thử là thành phần cốt lõi của chiến lược. Các quy trình kỹ thuật dùng chung như quy trình bug life-cycle và chiến lược công cụ thuộc về chiến lược kiểm thử."
+    },
+    {
+      "id": 70,
+      "question": "Đâu là điểm khác biệt cốt lõi về tư duy (mindset) giữa Lập trình viên (Developer) và Kiểm thử viên (Tester) trong dự án phần mềm?",
+      "options": [
+        "Lập trình viên tập trung vào việc thiết kế và xây dựng giải pháp để phần mềm chạy đúng, trong khi Kiểm thử viên tập trung vào việc tìm kiếm điểm yếu và kịch bản phần mềm thất bại.",
+        "Lập trình viên cố gắng tìm lỗi của người dùng, còn Kiểm thử viên cố gắng chứng minh phần mềm không thể có lỗi.",
+        "Lập trình viên không cần biết quy trình phát triển phần mềm, còn Kiểm thử viên quyết định toàn bộ kiến trúc mã nguồn.",
+        "Lập trình viên chỉ quan tâm đến giao diện người dùng, còn Kiểm thử viên chỉ quan tâm đến cơ sở dữ liệu."
+      ],
+      "correctAnswer": 0,
+      "type": "single",
+      "image": null,
+      "explanation": "Tư duy xây dựng (constructive) của lập trình viên hướng tới giải pháp, còn tư duy kiểm thử (critical) hướng tới việc xác minh và tìm điểm lỗi."
+    },
+    {
+      "id": 71,
+      "question": "Ý nghĩa của khái niệm \"Phần mềm là không tuyến tính\" (Software is non-linear) trong phân tích tác động của khiếm khuyết là gì?",
+      "options": [
+        "Một lỗi nhỏ ở một dòng lệnh hoặc dữ liệu đầu vào rất nhỏ có thể gây ra tác động hoặc hậu quả cực kỳ nghiêm trọng trên toàn hệ thống.",
+        "Chi phí kiểm thử phần mềm luôn tăng theo đường thẳng tuyến tính dựa trên số lượng dòng mã nguồn.",
+        "Tăng gấp đôi số lượng kiểm thử viên sẽ luôn làm giảm chính xác một nửa thời gian kiểm thử dự án.",
+        "Các lỗi phần mềm luôn xuất hiện theo chu kỳ thời gian đều đặn và dễ dự đoán."
+      ],
+      "correctAnswer": 0,
+      "type": "single",
+      "image": null,
+      "explanation": "Tính không tuyến tính có nghĩa là quy mô của nguyên nhân (lỗi nhỏ) không tương quan thuận theo tỷ lệ với quy mô của hậu quả (thảm họa lớn)."
+    },
+    {
+      "id": 72,
+      "question": "Theo quy trình kiểm thử chuẩn được giới thiệu trong chương, những hoạt động nào sau đây nằm trong chuỗi các bước của Quy trình kiểm thử?",
+      "options": [
+        "Gỡ lỗi tự động -> Lập trình lại mã nguồn -> Đóng dự án.",
+        "Lập kế hoạch kiểm thử -> Phân tích kiểm thử -> Thiết kế kiểm thử.",
+        "Triển khai kiểm thử -> Thực thi kiểm thử -> Hoàn thành kiểm thử.",
+        "Giám sát và kiểm soát kiểm thử diễn ra song song và xuyên suốt các giai đoạn khác."
+      ],
+      "correctAnswer": [
+        1,
+        2,
+        3
+      ],
+      "type": "multiple",
+      "image": null,
+      "explanation": "Đây là chuỗi hoạt động chuẩn bị ban đầu trong quy trình kiểm thử. Đây là chuỗi hoạt động thực thi và đóng giai đoạn kiểm thử. Hoạt động giám sát và kiểm soát bao trùm lên toàn bộ các bước còn lại của quy trình."
     }
   ]
 };

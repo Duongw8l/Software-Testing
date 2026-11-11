@@ -1,6 +1,6 @@
 # Trắc nghiệm Kiểm thử phần mềm
 
-Ứng dụng ôn tập trắc nghiệm môn Kiểm thử phần mềm (4 chương, 237 câu; chương 1 có 3 bộ đề, chương 2–4 có 2 bộ), viết bằng HTML/CSS/JavaScript thuần — không cần cài đặt, không cần server.
+Ứng dụng ôn tập trắc nghiệm môn Kiểm thử phần mềm (4 chương, 256 câu; chương 1 có 3 bộ đề, chương 2–4 có 2 bộ), viết bằng HTML/CSS/JavaScript thuần — không cần cài đặt, không cần server.
 
 **Dùng online:** https://duongw8l.github.io/Software-Testing/
 

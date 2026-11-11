@@ -1,5 +1,5 @@
 /* =========================================================
- * quiz.js — Trang làm bài: quiz.html?chapter=1..11
+ * quiz.js — Trang làm bài: quiz.html?chapter=1..12
  * Bố cục: thanh bên (lưới số câu) + khung câu hỏi + nút Trước/Kiểm tra/Tiếp.
  * Tiến độ mỗi chương được lưu vào localStorage, tải lại trang không mất bài.
  * ========================================================= */
@@ -64,7 +64,7 @@
   /* ================= Khởi tạo ================= */
   document.addEventListener("DOMContentLoaded", function () {
     var n = parseInt(new URLSearchParams(location.search).get("chapter"), 10);
-    if (A.CHAPTERS.indexOf(n) === -1) return showError("Không tìm thấy chương. Đường dẫn cần có dạng quiz.html?chapter=1 đến 11.");
+    if (A.CHAPTERS.indexOf(n) === -1) return showError("Không tìm thấy chương. Đường dẫn cần có dạng quiz.html?chapter=1 đến 12.");
     chapter = n;
     var res = A.getChapter(n);
     var title = res.data && res.data.title ? res.data.title : "Chương " + n;

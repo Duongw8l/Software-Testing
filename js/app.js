@@ -7,7 +7,7 @@
   "use strict";
 
   // Danh sách chương hiển thị trên trang chủ
-  var CHAPTERS = [1, 5, 9, 2, 6, 10, 3, 7, 11, 4, 8]; // 5–8 là "Bộ 2" của chương 1–4; 9–11 là "Bộ 3" của chương 1–3
+  var CHAPTERS = [1, 5, 9, 2, 6, 10, 3, 7, 11, 4, 8, 12]; // 5–8 là "Bộ 2", 9–12 là "Bộ 3" của chương 1–4
   var PREFIX = "quizapp:";
 
   /* ---------- localStorage an toàn (có thể bị chặn ở chế độ riêng tư / file://) ---------- */
